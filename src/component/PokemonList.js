@@ -1,11 +1,15 @@
+
 import React from "react";
+
 
 const PokemonList = ({ pokemon }) => {
   return (
-    <div>
-      {pokemon.map((p) => (
-        <div key={p}>{p}</div>
-      ))}
+    <div className="container">
+      <div className="pokemon-list">
+        {pokemon.map((p) => (
+          <div className="pokemon-item" key={p}>{p}</div>
+        ))}
+      </div>
     </div>
   );
 };

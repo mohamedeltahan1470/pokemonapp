@@ -2,6 +2,8 @@ import { React, useState, useEffect } from "react";
 import axios from "axios";
 import PokemonList from "./component/PokemonList";
 import Pagenation from "./component/pagenation";
+import './App.css'; // Import the CSS file at the top
+
 const App = () => {
   const [pokemon, setpokemon] = useState([]);
   const [loading, setloading] = useState(true);

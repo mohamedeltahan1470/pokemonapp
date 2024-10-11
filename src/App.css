@@ -1,38 +1,72 @@
-.App {
-  text-align: center;
+/* App.css */
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f8ff; /* لون خلفية مريح */
+  color: #333; /* لون النص */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.container {
+  display: flex; /* استخدام Flexbox */
+  flex-direction: column; /* توجيه العناصر عمودياً */
+  align-items: center; /* محاذاة العناصر في المنتصف */
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh; /* تعيين الحد الأدنى من الارتفاع */
+  padding: 20px; /* إضافة مساحة داخلية */
 }
 
-.App-link {
-  color: #61dafb;
+.pokemon-list {
+  display: flex; /* استخدام Flexbox لتوزيع العناصر */
+  flex-wrap: wrap; /* السماح للعناصر بالالتفاف إلى السطر التالي */
+  gap: 20px; /* المسافة بين العناصر */
+  justify-content: center; /* محاذاة العناصر في المنتصف */
+  margin-bottom: 30px; /* مسافة أسفل */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.pokemon-item {
+  background-color: #fff; /* لون الخلفية لكل عنصر */
+  padding: 15px; /* حواف داخلية */
+  border-radius: 8px; /* زوايا مستديرة */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* ظل */
+  transition: transform 0.2s; /* تأثير التحويل عند المرور */
+  text-align: center; /* توسيط النص */
+  font-weight: bold; /* جعل النص غامق */
+  min-width: 100px; /* تعيين عرض الحد الأدنى للعنصر */
+  flex-grow: 1; /* السماح للعناصر بالنمو */
+}
+
+.pokemon-item:hover {
+  transform: translateY(-5px); /* رفع العنصر عند المرور */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  margin: 0 10px; /* مسافة بين الأزرار */
+  padding: 10px 15px; /* حواف داخلية */
+  background-color: #007bff; /* لون خلفية الزر */
+  color: #fff; /* لون نص الزر */
+  border: none; /* إزالة الحدود */
+  border-radius: 5px; /* زوايا مستديرة */
+  cursor: pointer; /* تغيير المؤشر عند المرور */
+  transition: background-color 0.3s; /* تأثير الانتقال عند المرور */
+}
+
+button:hover {
+  background-color: #0056b3; /* تغيير لون الخلفية عند المرور */
+}
+
+/* تخصيص العرض في الشاشات الصغيرة */
+@media (max-width: 480px) {
+  .pokemon-list {
+    justify-content: center; /* محاذاة العناصر في المنتصف */
   }
-  to {
-    transform: rotate(360deg);
+  .pokemon-item {
+    flex-basis: 100%; /* جعل العناصر تأخذ عرض كامل في الشاشات الصغيرة */
+    margin-bottom: 10px; /* إضافة مسافة أسفل العناصر */
   }
 }
